@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dp7guj6vx80qd"]
+
+[ext_resource type="Script" uid="uid://bfd0wkqhk3pnx" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n2snw"]
+font_size = 30
+font_color = Color(0.5529412, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1490660190]
+script = ExtResource("1_37p78")
+
+[node name="HealthAmount" type="Label" parent="." unique_id=1667074293]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "20/20"
+label_settings = SubResource("LabelSettings_n2snw")
+horizontal_alignment = 1
+vertical_alignment = 1

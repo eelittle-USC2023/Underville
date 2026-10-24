@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dcfwljbhyp7ed"]
+
+[ext_resource type="Texture2D" uid="uid://dmj5fbpi1g1ck" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dcrxvwcmri012" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://ctd2ca0jklotv" path="res://player_attack.tscn" id="2_hqtel"]
+[ext_resource type="PackedScene" uid="uid://drxdlkx2j6nkk" path="res://interacting_component.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://dri1mbhtu6nj8" path="res://health_component.tscn" id="5_sweqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yujqa"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D" unique_id=1002594315]
+collision_mask = 13
+motion_mode = 1
+wall_min_slide_angle = 0.0
+platform_on_leave = 2
+script = ExtResource("1_onrkg")
+speed = 250
+player_attack = ExtResource("2_hqtel")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="." unique_id=272655382]
+shape = SubResource("RectangleShape2D_yujqa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439946037]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4flbx")
+
+[node name="InteractingComponent" parent="." unique_id=256906673 instance=ExtResource("3_i3pqv")]
+
+[node name="AttackSource" type="Marker2D" parent="." unique_id=429264713]
+position = Vector2(40, 0)
+
+[node name="HealthComponent" parent="." unique_id=1350426762 instance=ExtResource("5_sweqy")]
+health = 20
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=465178088]
+
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=877432624]
+
+[connection signal="died" from="HealthComponent" to="." method="_on_death"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

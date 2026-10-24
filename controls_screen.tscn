@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c0ewxkuquujjj"]
+
+[ext_resource type="Script" uid="uid://i843su6y8hs5" path="res://controls_screen.gd" id="1_lw34d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5kkf"]
+font_size = 36
+
+[sub_resource type="Theme" id="Theme_lw34d"]
+default_font_size = 36
+
+[node name="ControlsScreen" type="CanvasLayer" unique_id=1980820875]
+script = ExtResource("1_lw34d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1235450601]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2091121298]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 85.0
+offset_right = 430.0
+offset_bottom = 294.0
+text = "Movement - WASD
+Attack - Spacebar
+Interact - E
+Pause - Escape"
+label_settings = SubResource("LabelSettings_x5kkf")
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1163173181]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme = SubResource("Theme_lw34d")
+text = "Back"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

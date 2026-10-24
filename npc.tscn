@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://qv5kf1ls075e"]
+
+[ext_resource type="PackedScene" uid="uid://dwvmpdv741fi6" path="res://interactable.tscn" id="1_ideak"]
+[ext_resource type="Script" uid="uid://2g1l134q1t15" path="res://npc.gd" id="1_xxcha"]
+
+[node name="NPC" type="Node2D" unique_id=816430884]
+script = ExtResource("1_xxcha")
+
+[node name="Interactable" parent="." unique_id=652912176 instance=ExtResource("1_ideak")]
+interact_name = "E to Speak to NPC"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1538129852]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08575032, 0.085604854, 0.19424507, 1)
+
+[node name="Label" type="Label" parent="." unique_id=465420214]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -79.0
+offset_right = 20.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2

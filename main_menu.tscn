@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b76ffnrmgfti3"]
+
+[ext_resource type="Script" uid="uid://dbdgmbt8dicb8" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhts7"]
+font_size = 40
+
+[node name="MainMenu" type="Control" unique_id=90330199]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Label" type="Label" parent="." unique_id=1527404760]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 162.0
+offset_right = 99.0
+offset_bottom = 217.0
+grow_horizontal = 2
+text = "Underville"
+label_settings = SubResource("LabelSettings_rhts7")
+
+[node name="StartGame" type="Button" parent="." unique_id=454397513]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -15.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="Controls" type="Button" parent="." unique_id=1420584991]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 24.5
+offset_right = 35.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="Exit" type="Button" parent="." unique_id=1116492938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = 64.5
+offset_right = 18.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

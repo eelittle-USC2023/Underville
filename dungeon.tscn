@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bmfs71xuhghlg"]
+
+[ext_resource type="Script" uid="uid://4mv24ilujc2g" path="res://dungeon.gd" id="1_6elmv"]
+[ext_resource type="PackedScene" uid="uid://dbm4u8e3g3487" path="res://dungeon_room.tscn" id="2_qu0b2"]
+[ext_resource type="PackedScene" uid="uid://dp7guj6vx80qd" path="res://hud.tscn" id="4_orq0m"]
+[ext_resource type="PackedScene" uid="uid://b76ffnrmgfti3" path="res://main_menu.tscn" id="5_my81p"]
+[ext_resource type="PackedScene" uid="uid://c0ewxkuquujjj" path="res://controls_screen.tscn" id="5_vol8w"]
+
+[node name="Dungeon" type="Node" unique_id=97256802]
+script = ExtResource("1_6elmv")
+dungeon_room_scene = ExtResource("2_qu0b2")
+
+[node name="HUD" parent="." unique_id=1490660190 instance=ExtResource("4_orq0m")]
+visible = false
+
+[node name="MainMenu" parent="." unique_id=90330199 instance=ExtResource("5_my81p")]
+
+[node name="ControlsScreen" parent="." unique_id=1980820875 instance=ExtResource("5_vol8w")]
+visible = false
+
+[connection signal="exit" from="MainMenu" to="." method="_on_main_menu_exit"]
+[connection signal="start_game" from="MainMenu" to="." method="_on_main_menu_start_game"]
+[connection signal="to_controls" from="MainMenu" to="." method="_to_controls"]
+[connection signal="back" from="ControlsScreen" to="." method="_exit_controls"]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dguoorrrnjomk"]
+
+[node name="GameExplainer" type="Control" unique_id=2098356544]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1723553695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[node name="BeginButton" type="Button" parent="." unique_id=1238340825]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -61.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Begin!"
+
+[node name="Label" type="Label" parent="." unique_id=205595312]
+custom_maximum_size = Vector2(1052, -1)
+layout_mode = 1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1102.0
+offset_bottom = 125.0
+text = "Welcome to Underville!
+You play as a forager in a town trapped in a dungeon underground. You must collect enough resources by a certain day. 
+You will start the game in the town.
+You can talk to the NPC on the left side of town to find out how many resources you need and by what day.
+You collect resources by interacting with the green resource points found throughout the dungeon. However, you can only collect resources from a resource point once per day.
+To go to the next day, you can interact with your red bed in the town.
+You can check how many you still need after you've collected some by talking to the left NPC.
+You can enter the dungeon by walking into the brown door at the bottom of town.
+In the dungeon, you will encounter skeletons, who will walk toward you and, when they get close enough, attack you.
+You can either run away from them or try to kill them. Whichever you choose, be careful; if you die, you lose.
+They will be there, waiting, right where you left them in whichever room.  Unless you kill them.
+Your remaining health is in the top right of the screen.
+The right NPC informs you how many rooms are in the dungeon.
+Good luck!"
+autowrap_mode = 2

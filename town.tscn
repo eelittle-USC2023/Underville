@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://dw0gny36ctia5"]
+
+[ext_resource type="Script" uid="uid://bekiv715dcago" path="res://town.gd" id="1_gwqsq"]
+[ext_resource type="PackedScene" uid="uid://dcfwljbhyp7ed" path="res://player.tscn" id="2_nki3b"]
+[ext_resource type="PackedScene" uid="uid://qv5kf1ls075e" path="res://npc.tscn" id="3_e8yg3"]
+[ext_resource type="PackedScene" uid="uid://l6ok5nmmkphb" path="res://door.tscn" id="4_525j1"]
+[ext_resource type="PackedScene" uid="uid://dwvmpdv741fi6" path="res://interactable.tscn" id="5_nki3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oat4"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huxxj"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3l1t"]
+size = Vector2(20, 608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmk5g"]
+size = Vector2(20, 608)
+
+[node name="Town" type="Node2D" unique_id=924677120]
+script = ExtResource("1_gwqsq")
+
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=390775155]
+position = Vector2(576, 10)
+
+[node name="ColorRect" type="ColorRect" parent="TopWall" unique_id=575596869]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -10.0
+offset_right = 576.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=1247133321]
+shape = SubResource("RectangleShape2D_2oat4")
+
+[node name="BottomWall" type="StaticBody2D" parent="." unique_id=1709165071]
+position = Vector2(576, 638)
+
+[node name="ColorRect" type="ColorRect" parent="BottomWall" unique_id=1065296813]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -10.0
+offset_right = 576.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=2138966336]
+shape = SubResource("RectangleShape2D_huxxj")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1769031357]
+position = Vector2(10, 324)
+
+[node name="ColorRect" type="ColorRect" parent="LeftWall" unique_id=1368907005]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -304.0
+offset_right = 10.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1063677389]
+shape = SubResource("RectangleShape2D_t3l1t")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1991671120]
+position = Vector2(1142, 324)
+
+[node name="ColorRect" type="ColorRect" parent="RightWall" unique_id=640700945]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -304.0
+offset_right = 11.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1464877306]
+shape = SubResource("RectangleShape2D_cmk5g")
+
+[node name="Player" parent="." unique_id=1002594315 instance=ExtResource("2_nki3b")]
+position = Vector2(481, 478)
+
+[node name="Door" parent="." unique_id=1020402027 instance=ExtResource("4_525j1")]
+position = Vector2(576, 633)
+rotation = 3.1415927
+
+[node name="RoomNPC" parent="." unique_id=816430884 instance=ExtResource("3_e8yg3")]
+position = Vector2(942, 424)
+
+[node name="QuestNPC" parent="." unique_id=542407346 instance=ExtResource("3_e8yg3")]
+position = Vector2(282, 234)
+
+[node name="Bed" type="Node2D" parent="." unique_id=938097261]
+position = Vector2(679, 214)
+
+[node name="Interactable" parent="Bed" unique_id=652912176 instance=ExtResource("5_nki3b")]
+interact_name = "Go to Next Day?"
+
+[node name="ColorRect" type="ColorRect" parent="Bed" unique_id=1987815753]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45490196, 0, 0, 1)

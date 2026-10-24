@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bwxilyuemwdfh"]
+
+[ext_resource type="Script" uid="uid://byyscp8gmros3" path="res://tracking_enemy.gd" id="1_ukuaq"]
+
+[node name="TrackingEnemy" type="Node2D" unique_id=309063988]
+script = ExtResource("1_ukuaq")

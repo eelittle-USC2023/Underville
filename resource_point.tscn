@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://36hyh64ctnr8"]
+
+[ext_resource type="Script" uid="uid://qtpcvpxr7yw5" path="res://resource_point.gd" id="1_q1mco"]
+[ext_resource type="PackedScene" uid="uid://dwvmpdv741fi6" path="res://interactable.tscn" id="1_xyarv"]
+
+[node name="ResourcePoint" type="Node2D" unique_id=617346684]
+script = ExtResource("1_q1mco")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=252528005]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.3254902, 0, 1)
+
+[node name="Interactable" parent="." unique_id=652912176 instance=ExtResource("1_xyarv")]
+interact_name = "Collect Resources"

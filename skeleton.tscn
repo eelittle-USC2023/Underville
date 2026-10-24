@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bn70agp5bggss"]
+
+[ext_resource type="Script" uid="uid://bmfabf7pfxikq" path="res://skeleton.gd" id="1_plk42"]
+[ext_resource type="PackedScene" uid="uid://bwxilyuemwdfh" path="res://tracking_enemy.tscn" id="2_r6xse"]
+[ext_resource type="PackedScene" uid="uid://dri1mbhtu6nj8" path="res://health_component.tscn" id="3_r6xse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yujqa"]
+size = Vector2(40, 40)
+
+[node name="Skeleton" type="RigidBody2D" unique_id=1175997598 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 23
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_plk42")
+
+[node name="TrackingEnemy" parent="." unique_id=604925880 instance=ExtResource("2_r6xse")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617485150]
+shape = SubResource("RectangleShape2D_yujqa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=440701960]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.72464263, 0.7246426, 0.7246426, 1)
+
+[node name="HealthComponent" parent="." unique_id=1350426762 instance=ExtResource("3_r6xse")]
+health = 10
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=772691349]
+process_callback = 0
+one_shot = true
+
+[node name="StunTimer" type="Timer" parent="." unique_id=1244344942]
+process_callback = 0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="died" from="HealthComponent" to="." method="_on_death"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

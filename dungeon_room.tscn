@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://dbm4u8e3g3487"]
+
+[ext_resource type="PackedScene" uid="uid://dcfwljbhyp7ed" path="res://player.tscn" id="1_huxxj"]
+[ext_resource type="Script" uid="uid://ckxv7biol1lj0" path="res://dungeon_room.gd" id="1_wv8sf"]
+[ext_resource type="PackedScene" uid="uid://36hyh64ctnr8" path="res://resource_point.tscn" id="2_t3l1t"]
+[ext_resource type="PackedScene" uid="uid://l6ok5nmmkphb" path="res://door.tscn" id="3_cmk5g"]
+[ext_resource type="PackedScene" uid="uid://bn70agp5bggss" path="res://skeleton.tscn" id="5_jvmgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oat4"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huxxj"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3l1t"]
+size = Vector2(20, 608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmk5g"]
+size = Vector2(20, 608)
+
+[node name="DungeonRoom" type="Node2D" unique_id=924677120]
+script = ExtResource("1_wv8sf")
+skeleton_scene = ExtResource("5_jvmgd")
+resource_point_scene = ExtResource("2_t3l1t")
+
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=390775155]
+position = Vector2(576, 10)
+collision_layer = 15
+
+[node name="ColorRect" type="ColorRect" parent="TopWall" unique_id=575596869]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -10.0
+offset_right = 576.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=1247133321]
+shape = SubResource("RectangleShape2D_2oat4")
+
+[node name="BottomWall" type="StaticBody2D" parent="." unique_id=1709165071]
+position = Vector2(576, 638)
+collision_layer = 15
+
+[node name="ColorRect" type="ColorRect" parent="BottomWall" unique_id=1065296813]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -10.0
+offset_right = 576.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=2138966336]
+shape = SubResource("RectangleShape2D_huxxj")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1769031357]
+position = Vector2(10, 324)
+collision_layer = 15
+collision_mask = 5
+
+[node name="ColorRect" type="ColorRect" parent="LeftWall" unique_id=1368907005]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -304.0
+offset_right = 10.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1063677389]
+shape = SubResource("RectangleShape2D_t3l1t")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1991671120]
+position = Vector2(1142, 324)
+collision_layer = 15
+
+[node name="ColorRect" type="ColorRect" parent="RightWall" unique_id=640700945]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -304.0
+offset_right = 10.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1464877306]
+shape = SubResource("RectangleShape2D_cmk5g")
+
+[node name="TopDoor" parent="." unique_id=855050963 instance=ExtResource("3_cmk5g")]
+position = Vector2(576, 15)
+
+[node name="BottomDoor" parent="." unique_id=1020402027 instance=ExtResource("3_cmk5g")]
+position = Vector2(576, 633)
+rotation = 3.1415927
+
+[node name="RightDoor" parent="." unique_id=1995848643 instance=ExtResource("3_cmk5g")]
+position = Vector2(1137, 324)
+rotation = 1.5707964
+
+[node name="LeftDoor" parent="." unique_id=82174962 instance=ExtResource("3_cmk5g")]
+position = Vector2(15, 324)
+rotation = 4.712389
+
+[node name="Player" parent="." unique_id=1002594315 instance=ExtResource("1_huxxj")]
+
+[node name="ResourcePointSpawnLoc1" type="Marker2D" parent="." unique_id=340025926]
+position = Vector2(384, 324)
+
+[node name="ResourcePointSpawnLoc2" type="Marker2D" parent="." unique_id=1320204393]
+position = Vector2(768, 324)

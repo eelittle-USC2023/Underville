@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ctd2ca0jklotv"]
+
+[ext_resource type="Script" uid="uid://cahsluax8fmx0" path="res://player_attack.gd" id="1_m5rqh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r6xse"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsssl"]
+size = Vector2(10, 80)
+
+[node name="PlayerAttack" type="RigidBody2D" unique_id=1133627774]
+collision_layer = 2
+collision_mask = 0
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_r6xse")
+center_of_mass_mode = 1
+script = ExtResource("1_m5rqh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028343589]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_jsssl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1545303808]
+custom_minimum_size = Vector2(10, 80)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -80.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://l6ok5nmmkphb"]
+
+[ext_resource type="Script" uid="uid://ds7jnybyb6wnp" path="res://door.gd" id="1_ba8gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hun61"]
+size = Vector2(80, 30)
+
+[node name="Door" type="Area2D" unique_id=855050963]
+visible = false
+monitoring = false
+script = ExtResource("1_ba8gm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095932806]
+shape = SubResource("RectangleShape2D_hun61")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=839985058]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33458504, 0.16397637, 0.002254348, 1)
+
+[node name="SpawnLocation" type="Marker2D" parent="." unique_id=1986825421]
+position = Vector2(0, 50)
+
+[connection signal="body_entered" from="." to="." method="_on_door_entered"]

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cefbljfg0b72"]
+
+[ext_resource type="Script" uid="uid://c84djl8i3apls" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhts7"]
+font_size = 40
+
+[node name="PauseMenu" type="Control" unique_id=90330199]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="Label" type="Label" parent="." unique_id=1527404760]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 162.0
+offset_right = 99.0
+offset_bottom = 217.0
+grow_horizontal = 2
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_rhts7")
+
+[node name="StartGame" type="Button" parent="." unique_id=454397513]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -15.5
+offset_right = 48.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume Game"
+
+[node name="Controls" type="Button" parent="." unique_id=1420584991]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 24.5
+offset_right = 35.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="." unique_id=1116492938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = 64.5
+offset_right = 18.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit to Main Menu"
+
+[node name="ConfirmQuit" type="Button" parent="." unique_id=1149361917]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirm Exit"
+
+[node name="NoQuit" type="Button" parent="." unique_id=884473858]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = 24.5
+offset_right = 22.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ConfirmQuit" to="." method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="NoQuit" to="." method="_on_no_quit_pressed"]
